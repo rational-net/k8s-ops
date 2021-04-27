@@ -1,0 +1,38 @@
+---
+- name: cluster | flux | apply gotk-components
+  community.kubernetes.k8s:
+    state: present
+    definition: "{{ lookup('file', '../../../../../cluster/base/flux-system/gotk-components.yaml') }}"
+
+- name: cluster | flux | create flux-system deployment keys in flux ns
+  community.kubernetes.k8s:
+    state: present
+    definition:
+      kind: Secret
+      apiVersion: v1
+      metadata:
+        name: flux-system
+        namespace: flux-system
+      type: Opaque
+      data:
+        identity: "{{ flux_identity }}"
+        identity.pub: "{{ flux_identity_pub }}"
+        known_hosts: "{{ flux_known_hosts }}"
+
+- name: cluster | flux | create sops-gpg secret in flux-system ns
+  community.kubernetes.k8s:
+    state: present
+    definition:
+      kind: Secret
+      apiVersion: v1
+      metadata:
+        name: sops-gpg
+        namespace: flux-system
+      type: Opaque
+      data:
+        sops.asc: "{{ sops_asc }}"
+
+- name: cluster | flux | create flux-sync staging resource
+  community.kubernetes.k8s:
+    state: present
+    definition: "{{ lookup('file', '../../../../../cluster/base/flux-system/gotk-sync.yaml') }}"

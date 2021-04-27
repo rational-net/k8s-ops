@@ -1,0 +1,22 @@
+# Editors
+.vscode/
+.idea/
+# Trash
+.DS_Store
+Thumbs.db
+bin
+# flux
+*.iso
+# Temp
+ignore/
+logs/
+.task/
+# Server folder
+server/ansible/kubeconfig
+server/ansible/inventory/e2e/hosts.yaml
+server/ansible/roles/xanmanning.k3s*
+server/ansible/roles/geerlingguy.pip*
+server/ansible/roles/andrewrothstein.calicoctl*
+server/tests/node_modules
+# SOPS
+.decrypted~*.yaml

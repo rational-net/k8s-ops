@@ -1,0 +1,21 @@
+---
+- hosts:
+    - control-nodes
+    - generic-nodes
+    - storage
+  become: true
+  gather_facts: true
+  tasks:
+    #
+    # Turn off control-nodes and generic-nodes devices in 2 minutes
+    #
+
+    - name: turn off control-nodes
+      # ansible.builtin.command: /sbin/shutdown -h 2
+      ansible.builtin.command: /sbin/shutdown --help
+      when: "'control-nodes' in group_names"
+
+    - name: turn off generic-nodes
+      # ansible.builtin.command: /sbin/shutdown -h 2
+      ansible.builtin.command: /sbin/shutdown --help
+      when: "'generic-nodes' in group_names"

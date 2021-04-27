@@ -1,0 +1,13 @@
+---
+# Enable to skip apt upgrade
+skip_upgrade_packages: false
+# Enable to skip removing crufty packages
+skip_remove_packages: false
+
+# Timezone for the servers
+timezone: "America/New_York"
+
+# Additional ssh public keys to add to the nodes
+ssh_authorized_keys:
+  - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHFu9i9rogrWH+lNPU518jEImhYI1PjNkPJ60UlKyxNy"
+  - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJCl20IXfahhsiKPPR81UeLo8Itevkw7hV9oIdYOOnnA"

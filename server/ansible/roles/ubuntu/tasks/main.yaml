@@ -1,0 +1,44 @@
+---
+- include: host.yaml
+  tags:
+    - host
+
+- include: locale.yaml
+  tags:
+    - locale
+
+- include: packages.yaml
+  tags:
+    - packages
+
+- include: power-button.yaml
+  tags:
+    - power-button
+
+- include: motd.yaml
+  tags:
+    - motd
+
+- include: kernel.yaml
+  tags:
+    - kernel
+
+- include: boot.yaml
+  tags:
+    - boot
+
+- include: network.yaml
+  tags:
+    - network
+
+- include: filesystem.yaml
+  tags:
+    - filesystem
+
+- include: unattended-upgrades.yaml
+  tags:
+    - unattended-upgrades
+
+- include: user.yaml
+  tags:
+    - user

@@ -1,0 +1,20 @@
+---
+- include: kubeconfig.yaml
+  tags:
+    - kubeconfig
+
+- include: registry.yaml
+  when: mirror_registry is defined
+        or (private_registries is defined
+          and private_registries|length > 0)
+  tags:
+  - registry
+
+- include: calico.yaml
+  when:
+    - k3s_control_node is defined
+    - k3s_control_node
+    - calico.enabled is defined
+    - calico.enabled
+  tags:
+    - calico
