@@ -6,7 +6,7 @@ repos:
           - -c
           - .github/yamllint.config.yaml
         id: yamllint
-    repo: https://github.com/adrienverge/yamllint.git
+    repo: https://github.com/adrienverge/yamllint
     rev: v1.26.1
   - hooks:
       - id: trailing-whitespace

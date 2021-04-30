@@ -1,7 +1,8 @@
 ---
+
 - include: kubeconfig.yaml
   tags:
-    - kubeconfig
+  - kubeconfig
 
 - include: registry.yaml
   when: mirror_registry is defined
@@ -12,9 +13,18 @@
 
 - include: calico.yaml
   when:
-    - k3s_control_node is defined
-    - k3s_control_node
-    - calico.enabled is defined
-    - calico.enabled
+  - k3s_control_node is defined
+  - k3s_control_node
+  - calico.enabled is defined
+  - calico.enabled
   tags:
-    - calico
+  - calico
+
+- include: secrets.yaml
+  when:
+  - k3s_control_node is defined
+  - k3s_control_node
+  - k3s_etcd_datastore is defined
+  - k3s_etcd_datastore
+  tags:
+  - secrets

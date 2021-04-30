@@ -1,44 +1,48 @@
 ---
+
 - include: host.yaml
   tags:
-    - host
+  - host
 
 - include: locale.yaml
   tags:
-    - locale
+  - locale
 
 - include: packages.yaml
   tags:
-    - packages
+  - packages
 
 - include: power-button.yaml
   tags:
-    - power-button
-
-- include: motd.yaml
-  tags:
-    - motd
+  - power-button
 
 - include: kernel.yaml
   tags:
-    - kernel
+  - kernel
 
 - include: boot.yaml
   tags:
-    - boot
+  - boot
 
 - include: network.yaml
   tags:
-    - network
+  - network
 
 - include: filesystem.yaml
   tags:
-    - filesystem
+  - filesystem
 
 - include: unattended-upgrades.yaml
   tags:
-    - unattended-upgrades
+  - unattended-upgrades
 
 - include: user.yaml
   tags:
-    - user
+  - user
+
+- include: rsyslog.yaml
+  when:
+  - rsyslog.enabled is defined
+  - rsyslog.enabled
+  tags:
+  - rsyslog

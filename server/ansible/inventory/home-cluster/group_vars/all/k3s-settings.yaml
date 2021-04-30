@@ -1,4 +1,5 @@
 ---
+
 #
 # Below vars are for the xanmanning.k3s role
 # ...see https://github.com/PyratLabs/ansible-role-k3s#globalcluster-variables
@@ -19,5 +20,6 @@ k3s_use_experimental: false
 
 # Enable debugging
 k3s_debug: false
-# # Enable embedded-etcd
-# k3s_etcd_datastore: true
+
+# HA settings
+k3s_etcd_datastore: true
