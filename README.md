@@ -1,2 +1,2 @@
 # k8s-ops
-GitOps repository for my Rational's Kubernetes cluster
+GitOps repository for Rational's Kubernetes cluster

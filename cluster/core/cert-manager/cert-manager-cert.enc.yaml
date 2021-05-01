@@ -1,0 +1,39 @@
+# yamllint disable
+kind: Secret
+apiVersion: v1
+metadata:
+    name: cloudflare-token-secret
+    namespace: cert-manager
+stringData:
+    cloudflare-token: ENC[AES256_GCM,data:2tCutNSkDFpeHMOJzOR7qU/cmUTE4v2/0E9C/iQnRjITCOZOpQ==,iv:JDL0w2fU8NjOm9fd+nhZyR3uVWPlP+76sF8PIZU1+BE=,tag:wyAiO7rscFsxFFPsr6tazQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2021-04-30T19:12:39Z"
+    mac: ENC[AES256_GCM,data:QhhR9W/jGqoKDYcfvWPnqHVsh0v1GDuhhm0/W5u2aoYGooz+KAB9uGK1Tm+ClKfeGqDaGdohN4/8zpZBtVOK7nrcqs5ORX/qJtuQSrBTQOC1jZzcdS2ZkcrCQaQ9EThRDL2N6yocRKmPtmBj3IbxafDh+hHtGFUnS0Uo2f//zKA=,iv:dV7orJOOLoV/U77UT7QHTW0duITlXhVMYJ62Kdqgq/M=,tag:cJDS4tRXYNyC0zSUrr9fXA==,type:str]
+    pgp:
+        - created_at: "2021-04-30T19:12:39Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA/0I6bEV8DNNAQ/+Nx/b9D/VI88AjMyVq6FsJZSNbJ8UbMhY4lorUjGlXlZU
+            fhJrAA96LaW79dcJ0xkxF+XWNvSdiEnnfCs7wGoW1TfBRmd2KEJnRygMuchJWXZ/
+            23kVbF6FxXdOz/Jyg6Mr8j3RiBYC6Y5ITRxkKpcVll51Keb+e5kyojgmcxhL02UB
+            t6NE7p/MVbbxhnb+fvKtxgj+woEFJ9VYb0SpeThM/joZ5eqZQ0u/XkEKJvRpkPKO
+            HcERaNsqvkzOOrKA2253WUvboeLByXFR1c7m5ibFwivcr1Nln56H1LwDgOkBlLMo
+            7zePdbsHAyx8LqNMmoe0EgA+tOf5DDbbn9XtG+J7FAb7InuDAdzjngbeKmwpPz73
+            5Ub8EP9jiySVoDVYSnpwDN7IVPqfZObyIc4bUHdiF1h7DBVXte9sLm35IrCTXHR+
+            dEw0IOhkEltbbxEwfV2em41ONrtIGlQmzDlBGCM/gP+JHrtwXve9vC8NaX4NeNvb
+            6pOpuziKfo01UwoQJsWiqN/lEb1Hk1H0u/EB3cvSdiAnbwZA3PF5uP6C2V/Txhzw
+            Zlm6vkRlqpMRKHuPY2r6J+clRmXZzI+c3r6t7sH/M/cEG7dIZnREsAtRjhz+NAKd
+            9bR6f/MIumWMmuEF7OqYPqaatZ5miYttrINRDS6PsCt/iJFoi6ad8LObsdcoY2vS
+            XgGv0YBRtxZefz+2fie/GiQpo/ST6i0a9/YsaSiGJ5wsVVV8pjItSNiuY+aEiugC
+            lVHf9lfd3OIe8mY6SKOKnlzld8Lg2V/i45kHwi446dD0pVHiMWeuEwCo5d735aY=
+            =Sbx8
+            -----END PGP MESSAGE-----
+          fp: 84680C43E8FBE3DBA9468BD330D9BD1C5E315159
+    encrypted_regex: ((?i)(pass|secret($|[^N])|key|token|^data$|^stringData$))
+    version: 3.7.1

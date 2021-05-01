@@ -1,0 +1,39 @@
+# yamllint disable
+apiVersion: v1
+kind: Secret
+metadata:
+    name: github-token
+    namespace: flux-system
+stringData:
+    token: ENC[AES256_GCM,data://MCaRmR5TBm4Boxy1OGSbQ9twEgTg4m4ELjkNFsiSFps60ykwet1A==,iv:bO/cEQ3dKz0knVBkem5aOvgWYMjdy3/hEG1BGVcJjtg=,tag:wmMWqOP7VJr16TIJTOpvQA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2021-04-27T03:22:28Z"
+    mac: ENC[AES256_GCM,data:jB5hOSWd1kw1k2vXO5y+XJ1rZixQzXQWJad2OH6IsH92HgPtlK7A7Ms867o+B42QMpaDSjziuaL9cqyCNk5uCBxec73yxWDniuXRDdmlsyPMrb0R+UAErBYSKWTwDdp8czogmnA+dWl9DwpjNsWCr8LZKCvrqUQnJcVxs7uCMyE=,iv:t52V/GdSF974cOE3H8nVhLhRVWLhgH/f4mYzD2KMwuI=,tag:jakQcykvooKf2WuNBY8OSw==,type:str]
+    pgp:
+        - created_at: "2021-04-27T03:22:28Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA/0I6bEV8DNNAQ//bwKDetz4nXrAUnrBWHd6nrnJjwjGExOUwpgS7Bb7FVps
+            0dDS+sd45uNdaPb8rgM+xXFc1NmpgqDBQ8sH23DsBb76D1B/gGKgP3Jdo7Fg7cdK
+            bPJW9fPnlxiD/2uDiEskCIN2XJxLd6V8swvjg/j9/sn6ap5VSnuivY86xoYh170i
+            7cZCFLWFTnmG/KPxst5An1AG3xNS+JrANuH2jzhBZC3AhzSmyBlHK9YWZ008mkKD
+            OLDrTwubJvFxvl9LCe1n/JwvAzi9uRxuMMBCCFJVigBEEd3lFyHepjGH8XCJ20eM
+            9Uc/vhkCdaegV80fq8iH78/mR1ef7ySr1Vye3VDC+/Vj3621KGRLzVb4O8CZxFLe
+            rF38iK6oqmy9PEQu2WNw3Oqwf3ivnb8/4FjoRhl6uGh3yg/RCLeHbxWFTx1Ek6FG
+            sGtM8xuJnRlZ1OeIA/4FFeCCM+wBEQOJUwY6B9Lb49YPtPl2FudFoWMgiqOYeT+9
+            aSaLuFzDunRtLJpeo0buYaBlLgJeFFAa61KhIL0APLTQUFtQ83T0fcTYdnhC56dd
+            7KsK7BeuH6WIUyWF8UlkzboN7XTbfR1UvWPD/yINLioEn4p8ujecgd4SB4FY3N1H
+            kYpB+f61dh6w/6W4oyIGoLOXc9iNTsM9+TMDMx55dJyGOcM9cqxtQm46FRE56NjS
+            XAFTlzWMXH+B9aJeH8+T3IXs4E909WfDGIzOWU9uiu9/LR7nqMGphl59qAvZZTIf
+            CgPgRWUHW6EL1R2GpNaFTTc8L4VgzpJ219njjYKzGhTwmeG4O+zj5e+/yNAd
+            =lydT
+            -----END PGP MESSAGE-----
+          fp: 84680C43E8FBE3DBA9468BD330D9BD1C5E315159
+    encrypted_regex: ((?i)(pass|secret($|[^N])|key|token|^data$|^stringData$))
+    version: 3.7.1

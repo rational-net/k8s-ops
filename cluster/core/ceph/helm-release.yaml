@@ -1,0 +1,37 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ceph-rbd
+  namespace: ceph
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://ceph.github.io/csi-charts
+      chart: ceph-csi-rbd
+      version: 3.3.1
+      sourceRef:
+        kind: HelmRepository
+        name: ceph-csi
+        namespace: flux-system
+      interval: 10m
+  timeout: 30m
+  values:
+    encryptionKMSConfig:
+      {
+        "vault-tokens-test":
+          {
+            "encryptionKMSType": "",
+            "vaultAddress": "",
+            "vaultBackendPath": "",
+            "vaultTLSServerName": "",
+            "vaultCAVerify": "",
+            "tenantConfigName": "",
+            "tenantTokenName": "",
+            "tenants": {},
+          },
+      }
+    logLevel: 0
+    configMapName: ceph-csi-config
+    externallyManagedConfigmap: true

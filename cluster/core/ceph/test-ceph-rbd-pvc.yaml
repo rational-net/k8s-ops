@@ -1,0 +1,14 @@
+---
+# This file is for testing PV creation with Ceph.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: test-ceph-rbd-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Block
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ceph-rbd-sc

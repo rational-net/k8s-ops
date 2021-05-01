@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+    config.json: ENC[AES256_GCM,data:joIM8vFXNw8xIM6yn2iONNpWi8KYxDNchcbr01oNZ0VRBgh3fO8cr4kOZ7An1eq2sRn8YPKbY2NmLcMLTmq/JQtoqidgXaiG7LTzCHE5IIVkkUe7krvmx58DS3Pj3RZ57Hnigt2B+Vn1Lr5yDOPakQR9TWg8J4v/jOf/KRycAmd7YmxYC5RwLxk0WHUuK6W0pmvmADYtPk84nIEckInV135XylXMOxJ4DQ==,iv:p98qQG+VblJtCLEpsXFe43D3oiXsXACJoZWfRl5rG9I=,tag:I9l85OBKjyL3Sowot88B/w==,type:str]
+metadata:
+    name: ceph-csi-config
+    namespace: ceph
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2021-04-30T19:04:33Z"
+    mac: ENC[AES256_GCM,data:wWLWdth267Fc6NQ1pubF2mmZjBDvT0X40Vn5aE6VRYkPeyhJN3burA7UWpds9uECEIgeSuQiL71u58F8WCOllVC2w30jNVrB8gF1VAOxjfvIZI7f16LWmUYXatS5KVQdOZMx04aTWe1e3uOWI8/+0W2VbKdqSM/hHAj63p4L5Kk=,iv:W0qD27X/H8MSeUzdEKZEHBdpAsMp8OxZJft/Fyir1hA=,tag:K2QDL3mSsTM/dgFwm+LI1g==,type:str]
+    pgp:
+        - created_at: "2021-04-30T19:04:32Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA/0I6bEV8DNNAQ//apS0bm7sNz5lqPww6Eu+9LR/dVGvGp1B+IzDks+FGGLe
+            QxXRWmbnDdsSuwoyEY6Yrnb24ljl9Btg9fCiCLq7yUazK0xAMw47hH+v4WHvRO4c
+            xRjIl9rImZOObOzlV8hFiKyzeQ76MkyhmsLaMQgf9BnawRgA7n2SdaZV2JzBPyUx
+            PEVAiBGVh3yzP03Gi9zaibr7ib1eg23gxOgZPQiyvaOfYb5MFEFW85buY9Iw8hta
+            +2y2XF0K2ytzPXRsbx7o5e+DCPz55PycD1bgDQ97q73U1EPgcyVVnCBDIOqnDEYO
+            5TS/FMsfSIa31WwEg3C5Glp8JkUQ8CSJf5RMcZKl5DiLxZ7W01jpoQWuTdCCCqqT
+            WJgptPurT3dgEcNsjjukNm53v3pd60qRiAFFWzVT6w3bXHPLAtveY64FhgFSl/W1
+            R4xmagztnjhgbTcWwifJqtW1Izto80zGjUTs132rg6B7VDLmAhfWc47C8ELyhXqe
+            /Olberl0IRS26+OJPhH8UkuwP/Ht3uxQapnXK74kAqeLYyvOQ+aflLnje12t1Hsq
+            a5Mhxz0B2i6CGqnVVndKvZGxEGiY2uhlk6A1Y/BsPmsbAFoykkVG3zmxUS+6hbKm
+            T5wB5HzuljujQDQgQbEPvK52mrmftSY/vMfMNpn3kd7qFXL9CofkBR64wBS6bG3S
+            XgEifURPJ4KOTpLQofu/FTmxu/9ZcoFRE+OQVe9fjGTe0fWG7YhaQ3r7IEKY+47d
+            0W4m9z5NHgidIGWSmJGvzrDMKImOjVuCxG3D8H3oyM8cvx5CD6ClTAi9AuP1aL0=
+            =6K3N
+            -----END PGP MESSAGE-----
+          fp: 84680C43E8FBE3DBA9468BD330D9BD1C5E315159
+    encrypted_regex: ((?i)(pass|secret($|[^N])|key|token|^data$|^stringData$))
+    version: 3.7.1
