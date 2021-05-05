@@ -2,9 +2,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
-  name: traefik-charts
+  name: vernemq-charts
   namespace: flux-system
 spec:
   interval: 10m
-  url: https://helm.traefik.io/traefik
+  url: https://vernemq.github.io/docker-vernemq
   timeout: 3m
