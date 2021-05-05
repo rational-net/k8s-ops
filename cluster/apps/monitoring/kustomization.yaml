@@ -7,5 +7,5 @@ resources:
   - kube-prometheus-stack
   - loki
   # - snmp-exporter
-  #- unifi-poller
-# - uptimerobot-heartbeat
+  # - unifi-poller
+  # - uptimerobot-heartbeat

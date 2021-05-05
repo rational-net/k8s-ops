@@ -1,0 +1,52 @@
+---
+#cloud-config
+autoinstall:
+  version: 1
+  refresh-installer:
+    update: true
+  apt:
+    geoip: true
+    preserve_sources_list: false
+    primary:
+      - arches: [amd64, i386]
+        uri: http://archive.ubuntu.com/ubuntu
+      - arches: [default]
+        uri: http://ports.ubuntu.com/ubuntu-ports
+  identity:
+    hostname: ubuntu-server
+    # echo ubuntu | mkpasswd -m sha512crypt --stdin
+    password: $6$hg2y5aO5DRejj9yl$2lW4Jkvi989B5QyeWmB7Qb2ulxwEXQYBshcGDv9ChBrcWYfidQ5uX/n8qSI7pLm3Ho7HeMKEKmRBnotTBlgtq0
+    realname: Ubuntu User
+    username: ubuntu
+  keyboard:
+    layout: us
+  locale: en_US.UTF-8
+  network:
+    version: 2
+    ethernets:
+      id0:
+        match:
+          name: ens18
+        dhcp4: true
+        dhcp-identifier: mac
+        dhcp4-overrides:
+          use-dns: false
+        nameservers:
+          addresses:
+            - 192.168.4.1
+      id1:
+        match:
+          name: ens19
+        dhcp4: true
+        dhcp4-overrides:
+          use-routes: false
+  ssh:
+    allow-pw: true
+    authorized-keys:
+      # david_forbid_fun
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHFu9i9rogrWH+lNPU518jEImhYI1PjNkPJ60UlKyxNy"
+      # Ansible
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJCl20IXfahhsiKPPR81UeLo8Itevkw7hV9oIdYOOnnA"
+  install-server: true
+  late-commands:
+    - shutdown -h now

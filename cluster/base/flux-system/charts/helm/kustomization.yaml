@@ -22,5 +22,5 @@ resources:
   - prometheus-community-charts.yaml
   - stakater-charts.yaml
   - traefik-charts.yaml
-  - vernemq-charts.yaml
+  # - vernemq-charts.yaml
   - weaveworks-kured-charts.yaml

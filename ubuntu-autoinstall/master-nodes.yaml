@@ -1,0 +1,101 @@
+---
+#cloud-config
+autoinstall:
+  version: 1
+  refresh-installer:
+    update: true
+  apt:
+    geoip: true
+    preserve_sources_list: false
+    primary:
+      - arches: [amd64, i386]
+        uri: http://archive.ubuntu.com/ubuntu
+      - arches: [default]
+        uri: http://ports.ubuntu.com/ubuntu-ports
+  identity:
+    hostname: ubuntu-server
+    # echo Rational | mkpasswd -m sha512crypt --stdin
+    password: $6$dyVtJ12cTVkgMBKF$mVOMojL19MJfzG4kVIpNugad6nri.o4BD9KwcezcztBD33rVyDdvJqYGUhVH7RR/lecDGIyIUQfPIDD5FmBqb1
+    realname: Ubuntu User
+    username: ubuntu
+  keyboard:
+    layout: us
+  locale: en_US.UTF-8
+  network:
+    version: 2
+    ethernets:
+      id0:
+        match:
+          name: ens18
+        dhcp4: true
+        dhcp-identifier: mac
+        dhcp4-overrides:
+          use-dns: false
+        nameservers:
+          addresses:
+            - 192.168.4.1
+      id1:
+        match:
+          name: ens19
+        dhcp4: true
+        dhcp4-overrides:
+          use-routes: false
+  ssh:
+    allow-pw: true
+    authorized-keys:
+      # david_forbid_fun
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHFu9i9rogrWH+lNPU518jEImhYI1PjNkPJ60UlKyxNy"
+      # Ansible
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJCl20IXfahhsiKPPR81UeLo8Itevkw7hV9oIdYOOnnA"
+    install-server: true
+  late-commands:
+    - shutdown -h now
+  # https://curtin.readthedocs.io/en/latest/topics/storage.html
+  # storage:
+  #   swap:
+  #     size: 0
+  #   config:
+  #   # Root Disk
+  #   - id: root-disk-0
+  #     type: disk
+  #     path: /dev/nvme0n1
+  #     wipe: superblock-recursive
+  #     preserve: false
+  #     grub_device: false
+  #     name: ''
+  #     ptable: gpt
+  #   - id: root-partition-0
+  #     type: partition
+  #     device: root-disk-0
+  #     size: 512M
+  #     wipe: superblock
+  #     flag: boot
+  #     number: 1
+  #     preserve: false
+  #     grub_device: true
+  #   - id: root-format-0
+  #     type: format
+  #     fstype: fat32
+  #     volume: root-partition-0
+  #     preserve: false
+  #   - id: root-partition-1
+  #     type: partition
+  #     device: root-disk-0
+  #     size: -1
+  #     wipe: superblock
+  #     flag: ''
+  #     number: 2
+  #     preserve: false
+  #   - id: root-format-1
+  #     type: format
+  #     fstype: ext4
+  #     volume: root-partition-1
+  #     preserve: false
+  #   - id: root-mount-0
+  #     type: mount
+  #     device: root-format-0
+  #     path: /boot/efi
+  #   - id: root-mount-1
+  #     type: mount
+  #     device: root-format-1
+  #     path: /

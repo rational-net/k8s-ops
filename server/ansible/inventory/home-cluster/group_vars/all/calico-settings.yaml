@@ -7,7 +7,7 @@ calico:
   bgp:
     enabled: true
     # peer is usually your router e.g. 192.168.1.1
-    peer: 10.0.27.1
+    peer: 192.168.4.1
     as: 64512
     # externalIPs is the network you want services to consume
     # this network should not exist or be defined anywhere in your network

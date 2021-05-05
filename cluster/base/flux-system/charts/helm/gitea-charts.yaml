@@ -2,9 +2,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
-  name: vernemq-charts
+  name: gitea-charts
   namespace: flux-system
 spec:
   interval: 10m
-  url: https://vernemq.github.io/docker-vernemq
+  url: https://dl.gitea.io/charts/
   timeout: 3m
