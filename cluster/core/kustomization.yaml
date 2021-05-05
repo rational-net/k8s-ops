@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - namespaces
   - cert-manager
-  - flux-system
+  - ../apps/flux-system
   - ceph
   - system-upgrade
