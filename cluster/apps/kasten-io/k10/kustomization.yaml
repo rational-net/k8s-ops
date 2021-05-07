@@ -5,6 +5,6 @@ resources:
   - helm-release.yaml
   - prometheus-rule.yaml
   - service-monitor.yaml
-  - k10-dr-secret.enc.yaml
+  # - k10-dr-secret.enc.yaml
   - policies
   - profiles
