@@ -5,7 +5,7 @@ resources:
   - calico-system
   # - falco-system
   # - home
-  # - kasten-io
+  - kasten-io
   - kube-system
   # - media
   - monitoring
