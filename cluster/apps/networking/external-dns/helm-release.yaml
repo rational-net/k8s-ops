@@ -28,7 +28,6 @@ spec:
       email: "${SECRET_CLOUDFLARE_ACCOUNT_EMAIL}"
       proxied: true
     policy: sync
-    txtPrefix: "k8s."
     domainFilters:
       - "${SECRET_CLUSTER_DOMAIN}"
     crd:

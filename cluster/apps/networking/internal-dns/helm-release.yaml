@@ -31,7 +31,6 @@ spec:
         enabled: true
         secretName: coredns-etcd
     policy: sync
-    txtPrefix: "k8s."
     domainFilters:
       - "${SECRET_CLUSTER_DOMAIN}"
     crd:
