@@ -35,3 +35,5 @@ spec:
     logLevel: 0
     configMapName: ceph-csi-config
     externallyManagedConfigmap: true
+    annotations:
+      storageclass.kubernetes.io/is-default-class: 'true'
