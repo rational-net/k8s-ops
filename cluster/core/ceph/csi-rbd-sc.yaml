@@ -5,6 +5,8 @@ metadata:
   name: ceph-rbd-sc
   namespace: ceph
 provisioner: rbd.csi.ceph.com
+annotations:
+  storageclass.kubernetes.io/is-default-class: 'true'
 parameters:
   clusterID: c3537035-8248-4176-a13b-e369f660a644
   pool: kubernetes
