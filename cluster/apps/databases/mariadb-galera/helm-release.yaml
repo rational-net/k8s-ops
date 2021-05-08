@@ -33,7 +33,6 @@ spec:
     galera:
       name: galera
       bootstrap:
-        bootstrapFromNode:
         forceSafeToBootstrap: false
       mariabackup:
         user: mariabackup
