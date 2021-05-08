@@ -13,3 +13,5 @@ resources:
   - monitoring.yaml
   - networking.yaml
   - ceph.yaml
+  - nextcloud.yaml
+  - mattermost.yaml
