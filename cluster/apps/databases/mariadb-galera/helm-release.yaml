@@ -42,6 +42,7 @@ spec:
     persistence:
       enabled: true
       mountPath: /bitnami/mariadb
+      storageClass: ceph-rbd-sc
     configurationConfigMap: mariadb-galera-conf
     metrics:
       enabled: true
