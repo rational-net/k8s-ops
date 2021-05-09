@@ -23,7 +23,7 @@ spec:
       repository: bitnami/mariadb
       tag: 10.5.10-debian-10-r0
       pullPolicy: IfNotPresent
-      pullSecrets: [ ]
+      #pullSecrets: [ ]
       debug: false
     clusterDomain: cluster.local
     rootUser:
@@ -32,19 +32,6 @@ spec:
       forcePassword: false
     existingSecret: mariadb-creds
     primary:
-      ## Command and args for running the container (set to default if not set). Use array form
-      ##
-      command: [ ]
-      args: [ ]
-
-      ## Deployment pod host aliases
-      ## https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/
-      ##
-      hostAliases: [ ]
-
-      ## Configure MariaDB Primary with a custom my.cnf file
-      ## ref: https://mysql.com/kb/en/mysql/configuring-mysql-with-mycnf/#example-of-configuration-file
-      ##
       configuration: |-
         [mysqld]
         skip-name-resolve
