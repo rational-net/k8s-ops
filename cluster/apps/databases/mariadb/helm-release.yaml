@@ -30,7 +30,8 @@ spec:
       user: root
       password: ""
       forcePassword: false
-    existingSecret: mariadb-creds
+    auth:
+      existingSecret: mariadb-creds
     primary:
       configuration: |-
         [mysqld]
