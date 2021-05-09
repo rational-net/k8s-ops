@@ -25,6 +25,7 @@ spec:
       pullPolicy: IfNotPresent
       debug: false
     clusterDomain: cluster.local
+    architecture: replication
     rootUser:
       user: root
       password: ""
