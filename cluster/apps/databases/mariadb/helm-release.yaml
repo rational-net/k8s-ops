@@ -1,0 +1,149 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mariadb
+  namespace: databases
+spec:
+  releaseName: mariadb
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://charts.bitnami.com/bitnami
+      chart: mariadb
+      version: 9.3.11
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      registry: docker.io
+      repository: bitnami/mariadb
+      tag: 10.5.10-debian-10-r0
+      pullPolicy: IfNotPresent
+      pullSecrets: [ ]
+      debug: false
+    clusterDomain: cluster.local
+    rootUser:
+      user: root
+      password: ""
+      forcePassword: false
+    existingSecret: mariadb-creds
+    primary:
+      ## Command and args for running the container (set to default if not set). Use array form
+      ##
+      command: [ ]
+      args: [ ]
+
+      ## Deployment pod host aliases
+      ## https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/
+      ##
+      hostAliases: [ ]
+
+      ## Configure MariaDB Primary with a custom my.cnf file
+      ## ref: https://mysql.com/kb/en/mysql/configuring-mysql-with-mycnf/#example-of-configuration-file
+      ##
+      configuration: |-
+        [mysqld]
+        skip-name-resolve
+        explicit_defaults_for_timestamp
+        basedir=/opt/bitnami/mariadb
+        plugin_dir=/opt/bitnami/mariadb/plugin
+        port=3306
+        socket=/opt/bitnami/mariadb/tmp/mysql.sock
+        tmpdir=/opt/bitnami/mariadb/tmp
+        max_allowed_packet=16M
+        bind-address=0.0.0.0
+        pid-file=/opt/bitnami/mariadb/tmp/mysqld.pid
+        log-error=/opt/bitnami/mariadb/logs/mysqld.log
+        character-set-server=UTF8
+        collation-server=utf8_general_ci
+        [client]
+        port=3306
+        socket=/opt/bitnami/mariadb/tmp/mysql.sock
+        default-character-set=UTF8
+        plugin_dir=/opt/bitnami/mariadb/plugin
+        [manager]
+        port=3306
+        socket=/opt/bitnami/mariadb/tmp/mysql.sock
+        pid-file=/opt/bitnami/mariadb/tmp/mysqld.pid
+      livenessProbe:
+        enabled: true
+        initialDelaySeconds: 120
+        periodSeconds: 10
+        timeoutSeconds: 1
+        failureThreshold: 3
+        successThreshold: 1
+      readinessProbe:
+        enabled: true
+        initialDelaySeconds: 30
+        periodSeconds: 10
+        timeoutSeconds: 1
+        failureThreshold: 3
+        successThreshold: 1
+      persistence:
+        enabled: true
+        storageClass: "ceph-rbd-sc"
+        accessModes:
+          - ReadWriteOnce
+        size: 8Gi
+    secondary:
+      replicaCount: 3
+      configuration: |-
+        [mysqld]
+        skip-name-resolve
+        explicit_defaults_for_timestamp
+        basedir=/opt/bitnami/mariadb
+        port=3306
+        socket=/opt/bitnami/mariadb/tmp/mysql.sock
+        tmpdir=/opt/bitnami/mariadb/tmp
+        max_allowed_packet=16M
+        bind-address=0.0.0.0
+        pid-file=/opt/bitnami/mariadb/tmp/mysqld.pid
+        log-error=/opt/bitnami/mariadb/logs/mysqld.log
+        character-set-server=UTF8
+        collation-server=utf8_general_ci
+        [client]
+        port=3306
+        socket=/opt/bitnami/mariadb/tmp/mysql.sock
+        default-character-set=UTF8
+        [manager]
+        port=3306
+        socket=/opt/bitnami/mariadb/tmp/mysql.sock
+        pid-file=/opt/bitnami/mariadb/tmp/mysqld.pid
+      livenessProbe:
+        enabled: true
+        initialDelaySeconds: 120
+        periodSeconds: 10
+        timeoutSeconds: 1
+        failureThreshold: 3
+        successThreshold: 1
+      readinessProbe:
+        enabled: true
+        initialDelaySeconds: 30
+        periodSeconds: 10
+        timeoutSeconds: 1
+        failureThreshold: 3
+        successThreshold: 1
+      persistence:
+        enabled: true
+        storageClass: "ceph-rbd-sc"
+        accessModes:
+          - ReadWriteOnce
+        size: 8Gi
+      volumePermissions:
+        enabled: true
+        image:
+          registry: docker.io
+          repository: bitnami/bitnami-shell
+          tag: "10"
+          pullPolicy: Always
+      metrics:
+        enabled: true
+        image:
+          registry: docker.io
+          repository: bitnami/mysqld-exporter
+          tag: 0.12.1-debian-10-r430
+          pullPolicy: IfNotPresent
