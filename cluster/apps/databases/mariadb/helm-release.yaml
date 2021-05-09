@@ -32,6 +32,7 @@ spec:
       forcePassword: false
     auth:
       existingSecret: mariadb-creds
+      replicationUser: mariadb-repl
     primary:
       persistence:
         enabled: true
