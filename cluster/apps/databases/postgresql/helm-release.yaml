@@ -34,7 +34,7 @@ spec:
       enabled: true
       user: repl_user
       password: repl_password
-      readReplicas: 3
+      readReplicas: 2
       synchronousCommit: 'off'
       numSynchronousReplicas: 0
     postgresqlUsername: postgres
