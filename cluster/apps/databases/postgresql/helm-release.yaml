@@ -48,3 +48,6 @@ spec:
       size: 8Gi
     metrics:
       enabled: false
+    readReplicas:
+      persistence:
+        enabled: false
