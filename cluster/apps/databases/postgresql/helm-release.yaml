@@ -47,9 +47,4 @@ spec:
         - ReadWriteOnce
       size: 8Gi
     metrics:
-      enabled: true
-      service:
-        type: ClusterIP
-        annotations:
-          prometheus.io/scrape: 'true'
-          prometheus.io/port: '9187'
+      enabled: false
