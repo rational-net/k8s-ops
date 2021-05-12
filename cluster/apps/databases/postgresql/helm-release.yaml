@@ -33,13 +33,13 @@ spec:
     replication:
       enabled: true
       user: repl_user
-      password: repl_password
+      password: "${POSTGRESQL_REPLICATION_PASSWORD}"
       readReplicas: 2
       synchronousCommit: 'off'
       numSynchronousReplicas: 0
     postgresqlUsername: postgres
+    postgresqlPassword: "${POSTGRESQL_PASSWORD}"
     postgresqlDataDir: /bitnami/postgresql/data
-    existingSecret: postgresql-secret
     persistence:
       enabled: true
       mountPath: /bitnami/postgresql
