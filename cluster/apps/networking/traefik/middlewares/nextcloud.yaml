@@ -1,0 +1,22 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: nc-rep
+  namespace: networking
+spec:
+  redirectRegex:
+    regex: https://(.*)/.well-known/(card|cal)dav
+    replacement: https://${1}/remote.php/dav/
+    permanent: true
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: nc-header
+  namespace: networking
+spec:
+  headers:
+    customFrameOptionsValue: SAMEORIGIN
+    stsSeconds: 15552000

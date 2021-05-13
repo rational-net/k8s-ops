@@ -7,3 +7,4 @@ resources:
   - redirect-path.yaml
   - middlewares-secret.enc.yaml
   - basic-auth.yaml
+  - nextcloud.yaml

@@ -12,3 +12,4 @@ resources:
   - networking
   - system-upgrade
   - databases
+  - nextcloud
