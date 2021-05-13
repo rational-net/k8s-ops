@@ -5,44 +5,44 @@ metadata:
     name: nextcloud-creds
     namespace: nextcloud
 stringData:
-    NEXTCLOUD_USERNAME: ENC[AES256_GCM,data:/wVoEYg=,iv:Rj0fX8u6xq/cyznAySozSLIbbKXH5HOjwurWHrSJLnA=,tag:/C4ZJ0agBHiglP6QNeYkXg==,type:str]
-    NEXTCLOUD_PASSWORD: ENC[AES256_GCM,data:Q4JGRzvEpjf+WHsiW+g/HHRa,iv:Zee0YuKoeyi6ifwLDlUxbU+7hdtRSJvoB8RNUhpHxZc=,tag:4OgQbsjmrZ/EYBiWmiBXkg==,type:str]
-    NEXTCLOUD_SMTP_USERNAME: ENC[AES256_GCM,data:+QyrlqRZjMj9LBD14PMkUGpVmh5aWDiL7jvP,iv:wQ6sFtd45W+J/FyvbDOVv2FkBbI2OzbN8GrXsbBtDxs=,tag:NJCmOXWdGUnX06oZdmXIFw==,type:str]
-    NEXTCLOUD_SMTP_PASSWORD: ENC[AES256_GCM,data:x53sI7sLxzHyoZEUplUFqIZzt3G1tkXf61pk9WEMu++nTgEhuFCzRRZ09ADw909FEQs=,iv:LaZNjtcg6AnEn1m7eBPbyWo6UBB9I5zo4WOKdkUih+8=,tag:Uq/8UFcq3FPLU7rPM9w9zw==,type:str]
-    NEXTCLOUD_SMTP_FROMADDRESS: ENC[AES256_GCM,data:di+Z4z2SWcTQmjNyW3MnvCs5LiJ0TfjT8YIC,iv:3WRupgfrvYDUOz3PYprPmNJH+VgGJA/DzccOMthMBck=,tag:9uE8oHrfIA6jomyiMq81iQ==,type:str]
-    NEXTCLOUD_SMTP_DOMAIN: ENC[AES256_GCM,data:xbHsqRWvdQ15gImnmduZoCBx,iv:sJJtDl2zGDLQgqR/kL6SzMPE/UBGwpAIRB2PBETszy8=,tag:bUCS8Uz9Hg1rAteUjhHahA==,type:str]
-    NEXTCLOUD_SMTP_HOST: ENC[AES256_GCM,data:zCWI6LYJ1M5uv4lke/XjaQ==,iv:VjiUGr4t17o4/LLejZ8JuIS5vYMWtVVVGbyk405HUwM=,tag:eUt39zzazoNlQLxOo2hxRA==,type:str]
-    NEXTCLOUD_DB_NAME: ENC[AES256_GCM,data:H/pB+R3B18QN,iv:V47HgViq4v/wOXnORBw/SOC9jjzGZsCmrRDabwr3iIM=,tag:Zgg1GWN+3ji+yt4eqtkdeA==,type:str]
-    $NEXTCLOUD_DB_USERNAME: ENC[AES256_GCM,data:Z1Z+KnbhT9m3,iv:C1Xo44szEkaUsJLeIvNBgoXrpKWtiLzVkfJtm+A9UPM=,tag:8kpreWQeMVBdKUHmu21mHg==,type:str]
-    NEXTCLOUD_DB_PASSWORD: ENC[AES256_GCM,data:s6XdtJPQRdnU5EpsgtyA59hx,iv:p1mWh3EJNz4nElbjr3blcyG+tcqYvJge8iXDU/ssSAE=,tag:02FGNxQvLHe/+15QSKdnxA==,type:str]
-    NEXTCLOUD_DB_ROOT_PASS: ENC[AES256_GCM,data:kVlqrB5H/gA9KYT+nMB/h1NL,iv:Rco67bSPLPgg41pdGnAwec991RdXK/RAeNw/CrytJqY=,tag:PtAV9VSZm9qJ88ghpTkipw==,type:str]
+    NEXTCLOUD_USERNAME: ENC[AES256_GCM,data:K5kdBNQ=,iv:TBcTRrER5hF9QhTzDdPrMQE9iUlXaPdxAbo/WMYhhGc=,tag:Mn8jSUovi+PVEM5/Pk43Sw==,type:str]
+    NEXTCLOUD_PASSWORD: ENC[AES256_GCM,data:V2VnlxtAC+fb1mhUZCpd51Qt,iv:zHfpyzBEeKz8QfN0ntTCLg+Jz49+s3U9T41EtBJHRwY=,tag:cs6ICQY0GnbDf4JYVrqgJA==,type:str]
+    NEXTCLOUD_SMTP_USERNAME: ENC[AES256_GCM,data:QEqHcXqHxXXVE7N/VpuQAb7m/PDfQFCvfvlh,iv:OuOAdM6Ejdrrh+zIg5So+hNIMEeZob+AWmemZkYGXcw=,tag:Xf5WGlOy4lHiD6g8lJPi2A==,type:str]
+    NEXTCLOUD_SMTP_PASSWORD: ENC[AES256_GCM,data:3fh2iLsRMjBnArrORRF7izyvIIM0jP0A1HJuMXoUCX2HqzJE9RKd9lTZSS7WBzqx5v8=,iv:6HH1QRTja8G+EKuSp3FFqi250TIQRsEzW7grLjqndVk=,tag:GXNgHP1ibDVqVorZYNieHA==,type:str]
+    NEXTCLOUD_SMTP_FROMADDRESS: ENC[AES256_GCM,data:Ki9xMwo+Ns/FstfJEnnpngN6fd7vqIz3d7l5,iv:EqYi+3mZQYEdskonVCWSDYlo9uv4k50gA9qzTQbGce4=,tag:G2yWjsBsV2FKP2kQrTKfQQ==,type:str]
+    NEXTCLOUD_SMTP_DOMAIN: ENC[AES256_GCM,data:wvv3V8GOghJKj5K4BjlkyADP,iv:KqYub9gtj2DQpeWvOMNIcADNA2r6MizbiwQI0ZfMJ3A=,tag:fn16//dI15thQTWOKil8hQ==,type:str]
+    NEXTCLOUD_SMTP_HOST: ENC[AES256_GCM,data:XSwA3P63XV2BucpmI6ieVg==,iv:VR4+OrU/KZUVJ2WZ4f+k3zKjUNJ0o2ejPpKiYi5u3oI=,tag:P2u1xeMVmigsmOVJAv/6YQ==,type:str]
+    NEXTCLOUD_DB_NAME: ENC[AES256_GCM,data:5u9XqIY6NL86,iv:StcHcWuG6hA1IfxFEkgetZgBcS+RmTdmEdrjuaS3LaE=,tag:spzBUU4A6bOeBVMk8vVkJQ==,type:str]
+    NEXTCLOUD_DB_USERNAME: ENC[AES256_GCM,data:JzogY8Giw3vS,iv:4WL/DfVGblSERIXL1iHmyHpGoWltczJ4C5jX84uDbcY=,tag:F4jlzA73TrN3st7Z8PahEg==,type:str]
+    NEXTCLOUD_DB_PASSWORD: ENC[AES256_GCM,data:5rpEJmJcnfo4yC6WjREqdGHU,iv:30E5f+MlQ6zg3uqE+PYnW8Oat0si5p1Cv9A9CCpEKlg=,tag:4lh+rKZwpQM5jxz+kER0cg==,type:str]
+    NEXTCLOUD_DB_ROOT_PASS: ENC[AES256_GCM,data:W1tmEDkyXln9armRHm7ER0mX,iv:4VbruEkw0Pf+XFJVSJU3AfhNojIP4kUYsy20rboVopE=,tag:uX3fy4zZKxAHkKvwF5egFQ==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2021-05-13T01:43:04Z"
-    mac: ENC[AES256_GCM,data:rM3Fy/Iu8RkAyLVTLPgdefLl1RFj+q8L524nN/frdEwGMtTzGcTwlJ98I3NVkbndB8eLfcYoqB/Ic0Ld1ox16CCa5fjzUt4jq70u3w+Bp//fmpe0ri+lu4U8oEw8KLzLj6clB7984KSdrQ8VQAlNP2Ijovnz9FkNKLczhWm3QDg=,iv:zMUYwCyhAn4A7bL568ywk7Sl8+Slc8xuyyAxRUbilUQ=,tag:OhY5mYM9QBcikYezbP2CWg==,type:str]
+    lastmodified: "2021-05-13T01:48:04Z"
+    mac: ENC[AES256_GCM,data:PGu0ZcVB2fy+RS+PymaieAB5sJBuDVIsZm1SSMEYwDIYnmFA1SS8QJaBxnN5iPXyEsHSYjG+/nSkJ3DPOfNYQ26egBmvFd+nR+kMSGwRybYaQGIGzdc7gbn1K8Qpfvxt6DM2NtQR7MlD5tSW0La7qBr9Dp+2uuPOtd8S8qAI0YA=,iv:rYomrhWyhf26m7vSpwvp/m8oy6DL4Jtf52iO+bHntXc=,tag:40O0CHYa9vzQTcl8Jx6m4w==,type:str]
     pgp:
-        - created_at: "2021-05-13T01:43:03Z"
+        - created_at: "2021-05-13T01:48:03Z"
           enc: |
             -----BEGIN PGP MESSAGE-----
 
-            hQIMA/0I6bEV8DNNAQ//RbNxcEbAjBbWFh9ciavZaYuU184CNZEIKr3Bk2+Evbgl
-            ZI4+OslAuPLGw14tHeJkmBE25GZqAjcyvFCzXWgxvqXe1zx37cVwu3YRp8V/9fqs
-            VMdiiuWkCX/iufX7I8bLa5k2RzsyykfPqSxzirBgHO2Zoi7ZN+YHf/dFpO8gEF5H
-            4zk9uwdDQCC71C4VC8nDJQMnlvlc4D9VXYa+tPxx1vH8zvHlFGKBGlmzlcNHZm7C
-            CwrIzff4zipegIogfjzaXsuIn1XSMiygrQOm0WLktsXhgoIOIfXLNyaOypcQanNg
-            PSSxQNI9qd2mEwFHea/HDghGnzM63XdsrcHGh+uTxzzqWkbQz1Tv6+PvJENUrcZu
-            lFWXFZ0nPaU1shyO4JwNLKxwB27r3YEnWpS9Qkxg5JkxjfCZhA8IxpGwmku5/pX7
-            1fm8guWoGnqAHfAto6XKUA7TfQJ2jami5dLu1HLBbAM6u4rZja+282AXr2XvYV7C
-            IpiNcgomYlr0zaASGqK3K1/A24WMnwBcfdXstP1GgxCaBJximIzpXOcxp0MgTKPM
-            tJqYpEXFK2lUn7c90lvQGUKMl7IKi3+wjzw09Utflm0BGF7dmyn3UaaqO0zFuhNY
-            KRcvqz5thQ/+IIP8EMOqjutIWi3UU3s3RG/idQNLehuW2tEmIoX7lJOp7eFF037S
-            XAFqKY+bAsw8jrY9MAhhP8AnUOG1kEaDg8BN9TLnSdXy/7JHNFnJYQhhKNbqPEux
-            hMSPKDsx9n6bzQPRnUzaByrbioSCAJJBgJ1S+99nVSSB0bqV+BV3z8yC1bqU
-            =lFw2
+            hQIMA/0I6bEV8DNNAQ//XSDbXwGSsDrYNs6FgKKeEREg3bmoRZgDa3z2eCKt1Vve
+            ZCyFYLQa6fLbYi0kXMRxgkag1K+kMYLnQ+JUoQkwKkf315JvDNN88TXLBSjiuDc8
+            jdpjHN4o0l/hZmnD/x1k2W3E+vSQfbMEaWGvmataERsqKeSa0Z9RSfmuudXh2YJM
+            B3pmus1pzwrK/ycpeNDcUOBBfeEhBFdWdM/Y7ywglNdaukweiufcojGMjSblXxFv
+            onjIfjDG/6rrd1RlBaDDuEp/5tq/JdNamLRYDLuwG+He16tuM+yfT+luHBE1DewJ
+            MSwS5z9Yw3L+E/es8st9/lbdx3trAFCes63TOFle6we/x+Yhj6hWECFivfjpSMCy
+            1E3swhfZBuKzAWFvzp8r2iDUDCH2bsITY+I+K87KO8Ec3LjRvHderi+Vy/Q6PR42
+            KdNT2H3/fREP6gjeH3pwlyT1KD2T8ei6cn4TkpJ9PeNbtQq2WnuLEaKuFmnMxAC+
+            axMT+d015kPWDs7sJ1DRVix6y8xRxwj6oRO4sgOKU4dbSswI3u0iDAswtdDBaP0s
+            2F7sL8Br6DsZ6xnUY28IGPPlrAQAM/ZlZLW6+8efdvQPcQdeI0No9fLnEUf5WM1t
+            fCbuR+ZIw2YhAYUduWmZjZbxKewkbdyJ4JzE1e0zolFIsyv/vuKoRhDrsZVPFLbS
+            XgEjL4wGALkFgoiLjIzJB4ojNoEIYh9Rx4mwqpR4N8o7wgCwxNgTqkn0Qdnrr1Dz
+            2sZ5TFPhPQMUZ9tetsIVYZaVYCc3wpGffoULy9g8A7q5Gh7dJ4I5ghZUCgY5Q7Q=
+            =/rTg
             -----END PGP MESSAGE-----
           fp: 84680C43E8FBE3DBA9468BD330D9BD1C5E315159
     encrypted_regex: ((?i)(pass|secret($|[^N])|key|token|^data$|^stringData$))
