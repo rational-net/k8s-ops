@@ -42,6 +42,8 @@ spec:
             secure: ssl
             port: 465
             authtype: LOGIN
+            name: "$NEXTCLOUD_SMTP_USERNAME"
+            password: "$NEXTCLOUD_SMTP_PASSWORD"
     internalDatabase:
       enabled: false
     mariadb:
