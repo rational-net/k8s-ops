@@ -33,7 +33,7 @@ spec:
         smtpPasswordkey: "NEXTCLOUD_SMTP_PASSWORD"
       datadir: "/var/www/html/data"
       mail:
-        enabled: true
+        enabled: false
         fromAddress: "$NEXTCLOUD_SMTP_USERNAME"
         domain: "$NEXTCLOUD_SMTP_DOMAIN"
         mail:
