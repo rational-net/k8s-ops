@@ -9,9 +9,9 @@ k3s_control_node: true
 # k3s settings for all control-plane nodes
 k3s_server:
   node-ip: "{{ ansible_host }}"
-  tls-san:
-  - "mercury.rational.host"
-  - "10.0.27.1"
+  #tls-san:
+  #- "mercury.rational.host"
+  #- "10.0.27.1"
   docker: false
   flannel-backend: 'none' # This needs to be in quotes
   disable:
