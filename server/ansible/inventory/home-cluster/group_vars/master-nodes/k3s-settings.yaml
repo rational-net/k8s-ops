@@ -30,5 +30,3 @@ k3s_server:
   kubelet-arg:
   - "feature-gates=GracefulNodeShutdown=true"
   - "feature-gates=MixedProtocolLBService=true"
-  kube-apiserver-arg:
-  - "anonymous-auth=true"

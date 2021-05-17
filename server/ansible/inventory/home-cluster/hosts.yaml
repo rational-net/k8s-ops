@@ -7,10 +7,10 @@ all:
     master-nodes:
       hosts:
         k8s-master-1:
-        k8s-master-2:
-        k8s-master-3:
     # Node group, do not change the 'node' name
     # hosts should match the filenames in 'host_vars'
     worker-nodes:
       hosts:
         k8s-worker-1:
+        k8s-worker-2:
+        k8s-worker-3:
