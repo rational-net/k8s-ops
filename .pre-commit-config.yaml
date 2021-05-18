@@ -19,7 +19,7 @@ repos:
       - id: check-merge-conflict
       - id: check-executables-have-shebangs
     repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
+    rev: v4.0.1
   - hooks:
       - id: remove-crlf
       - id: remove-tabs
