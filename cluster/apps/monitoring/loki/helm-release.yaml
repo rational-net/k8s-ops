@@ -32,4 +32,3 @@ spec:
     promtail:
       serviceMonitor:
         enabled: true
-
