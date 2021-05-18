@@ -33,7 +33,7 @@ spec:
       conditional:
         mapping:
           # CoreDNS IP
-          ${SECRET_CLUSTER_DOMAIN}: udp:192.168.69.180
+          ${SECRET_CLUSTER_DOMAIN}: udp:${LB_COREDNS_IP}
       blocking:
         blackLists:
           ads:
@@ -46,7 +46,7 @@ spec:
           default:
           - ads
       clientLookup:
-        upstream: udp:10.1.6.1
+        upstream: udp:${GATEWAY_IP}
       prometheus:
         enable: true
         path: /metrics
@@ -57,23 +57,16 @@ spec:
         port: 4000
       additionalServices:
         - enabled: true
-          nameSuffix: dns-tcp
+          nameSuffix: dns
           type: LoadBalancer
-          externalIPs:
-            - "${CLUSTER_LB_BLOCKY}"
+          loadBalancerIP: "${LB_BLOCKY_IP}"
           port:
             port: 53
             name: dns-tcp
             protocol: TCP
             targetPort: 53
-          externalTrafficPolicy: Local
-        - enabled: true
-          nameSuffix: dns-udp
-          type: LoadBalancer
-          externalIPs:
-            - "${CLUSTER_LB_BLOCKY}"
-          port:
-            port: 53
+          additionalPorts:
+          - port: 53
             name: dns-udp
             protocol: UDP
             targetPort: 53

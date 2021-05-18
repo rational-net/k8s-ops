@@ -25,8 +25,7 @@ spec:
     isClusterService: false
     serviceType: LoadBalancer
     service:
-      externalIPs:
-        - "${CLUSTER_LB_COREDNS}"
+      loadBalancerIP: "${LB_COREDNS_IP}"
       externalTrafficPolicy: Local
     servers:
       - zones:
