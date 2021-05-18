@@ -25,95 +25,88 @@
         "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n",
         // kube-prometheus-stack crd
         "registryUrl=(?<registryUrl>.*?)\n *tag: (?<depName>[a-zA-Z-]+)-(?<currentValue>.*)\n",
+        // rook-ceph crd
+        "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n *tag: (?<currentValue>.*)\n",
         // cert-manager crd
         "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n.*\\/(?<currentValue>.*?)\\/",
       ],
       datasourceTemplate: "helm",
     },
   ],
-  "packageRules": [
+  packageRules: [
     // setup datasources
     {
-      "matchDatasources": ["helm"],
-      "separateMinorPatch": true,
+      matchDatasources: ["helm"],
     },
     // global docker datasource settings
     {
-      "matchDatasources": ["docker"],
-      "enabled": true,
-      "commitMessageTopic": "container image {{depName}}",
-      "commitMessageExtra": "to {{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{{newValue}}}{{/if}}",
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "separateMinorPatch": true,
+      matchDatasources: ["docker"],
+      enabled: true,
+      commitMessageTopic: "container image {{depName}}",
+      commitMessageExtra: "to {{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{{newValue}}}{{/if}}",
+      matchUpdateTypes: ["major", "minor", "patch"],
     },
     // add labels according to package and update types
     {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["major"],
-      "labels": ["renovate/image", "dep/major"],
+      matchDatasources: ["docker"],
+      matchUpdateTypes: ["major"],
+      labels: ["renovate/image", "dep/major"],
     },
     {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["minor"],
-      "labels": ["renovate/image", "dep/minor"],
+      matchDatasources: ["docker"],
+      matchUpdateTypes: ["minor"],
+      labels: ["renovate/image", "dep/minor"],
     },
     {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["patch"],
-      "labels": ["renovate/image", "dep/patch"],
+      matchDatasources: ["docker"],
+      matchUpdateTypes: ["patch"],
+      labels: ["renovate/image", "dep/patch"],
     },
     {
-      "matchDatasources": ["helm"],
-      "matchUpdateTypes": ["major"],
-      "labels": ["renovate/helm", "dep/major"],
+      matchDatasources: ["helm"],
+      matchUpdateTypes: ["major"],
+      labels: ["renovate/helm", "dep/major"],
     },
     {
-      "matchDatasources": ["helm"],
-      "matchUpdateTypes": ["minor"],
-      "labels": ["renovate/helm", "dep/minor"],
+      matchDatasources: ["helm"],
+      matchUpdateTypes: ["minor"],
+      labels: ["renovate/helm", "dep/minor"],
     },
     {
-      "matchDatasources": ["helm"],
-      "matchUpdateTypes": ["patch"],
-      "labels": ["renovate/helm", "dep/patch"],
+      matchDatasources: ["helm"],
+      matchUpdateTypes: ["patch"],
+      labels: ["renovate/helm", "dep/patch"],
     },
     // custom version schemes
     {
-      "matchDatasources": ["docker"],
-      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<compatibility>.*)$",
-      "matchPackageNames": ["blakeblackshear/frigate"],
+      matchDatasources: ["docker"],
+      versioning: "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<compatibility>.*)$",
+      matchPackageNames: ["blakeblackshear/frigate"],
     },
     // pin package versions
     {
-      "matchDatasources": ["docker"],
-      "allowedVersions": "<13",
-      "matchPackageNames": [
-        "postgres",
-        "prodrigestivill/postgres-backup-local",
-      ],
+      matchDatasources: ["docker"],
+      allowedVersions: "<13",
+      matchPackageNames: ["postgres", "prodrigestivill/postgres-backup-local"],
     },
     {
-      "matchDatasources": ["docker"],
-      "allowedVersions": "<2",
-      "matchPackageNames": [
-        "influxdb",
-      ]
+      matchDatasources: ["docker"],
+      allowedVersions: "<2",
+      matchPackageNames: ["influxdb"],
     },
     {
-      "matchDatasources": ["docker"],
-      "versioning": "loose",
-      "matchPackageNames": [
-        "ghcr.io/k8s-at-home/plex"
-      ],
+      matchDatasources: ["docker"],
+      versioning: "loose",
+      matchPackageNames: ["ghcr.io/k8s-at-home/plex"],
     },
     // enable auto-merge
     {
-      "matchDatasources": ["docker"],
-      "automerge": true,
-      "automergeType": "branch",
-      "requiredStatusChecks": null,
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchPackageNames": [
+      matchDatasources: ["docker"],
+      automerge: true,
+      automergeType: "branch",
+      requiredStatusChecks: null,
+      matchUpdateTypes: ["minor", "patch"],
+      matchPackageNames: [
         "flaresolverr/flaresolverr",
         "ghcr.io/k8s-at-home/jackett",
         "ghcr.io/k8s-at-home/prowlarr",
