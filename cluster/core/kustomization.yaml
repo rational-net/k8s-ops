@@ -7,3 +7,4 @@ resources:
   - ../apps/flux-system
   - ceph
   - system-upgrade
+  - networking
