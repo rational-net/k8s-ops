@@ -1,0 +1,169 @@
+nodes:
+  - address: 192.168.4.10
+    user: ubuntu
+    role:
+      - controlplane
+      - etcd
+      - worker
+    port: 22
+    hostname_override: k8s-master-1
+  - address: 192.168.4.11
+    user: ubuntu
+    role:
+      - controlplane
+      - etcd
+      - worker
+    port: 22
+    hostname_override: k8s-master-2
+  - address: 192.168.4.12
+    user: ubuntu
+    role:
+      - controlplane
+      - etcd
+      - worker
+    port: 22
+    hostname_override: k8s-master-3
+  - address: 192.168.4.20
+    user: ubuntu
+    role:
+      - worker
+    port: 22
+    hostname_override: k8s-worker-1
+  - address: 192.168.4.21
+    user: ubuntu
+    role:
+      - worker
+    port: 22
+    hostname_override: k8s-worker-2
+  - address: 192.168.4.22
+    user: ubuntu
+    role:
+      - worker
+    port: 22
+    hostname_override: k8s-worker-3
+
+
+
+# If set to true, RKE will not fail when unsupported Docker version
+# are found
+ignore_docker_version: false
+
+# Cluster level SSH private key
+# Used if no ssh information is set for the node
+ssh_key_path: ~/.ssh/ansible_auth
+
+# Enable use of SSH agent to use SSH private keys with passphrase
+# This requires the environment `SSH_AUTH_SOCK` configured pointing
+#to your SSH agent which has the private key added
+ssh_agent_auth: false
+
+# Set the name of the Kubernetes cluster
+cluster_name: virgo
+
+# The Kubernetes version used. The default versions of Kubernetes
+# are tied to specific versions of the system images.
+#
+# For RKE v0.2.x and below, the map of Kubernetes versions and their system images is
+# located here:
+# https://github.com/rancher/types/blob/release/v2.2/apis/management.cattle.io/v3/k8s_defaults.go
+#
+# For RKE v0.3.0 and above, the map of Kubernetes versions and their system images is
+# located here:
+# https://github.com/rancher/kontainer-driver-metadata/blob/master/rke/k8s_rke_system_images.go
+#
+# In case the kubernetes_version and kubernetes image in
+# system_images are defined, the system_images configuration
+# will take precedence over kubernetes_version.
+kubernetes_version: v1.20.6-rancher1-1
+
+services:
+  #etcd:
+  # if external etcd is used
+  # path: /etcdcluster
+  # external_urls:
+  #   - https://etcd-example.com:2379
+  # ca_cert: |-
+  #   -----BEGIN CERTIFICATE-----
+  #   xxxxxxxxxx
+  #   -----END CERTIFICATE-----
+  # cert: |-
+  #   -----BEGIN CERTIFICATE-----
+  #   xxxxxxxxxx
+  #   -----END CERTIFICATE-----
+  # key: |-
+  #   -----BEGIN PRIVATE KEY-----
+  #   xxxxxxxxxx
+  #   -----END PRIVATE KEY-----
+  # Note for Rancher v2.0.5 and v2.0.6 users: If you are configuring
+  # Cluster Options using a Config File when creating Rancher Launched
+  # Kubernetes, the names of services should contain underscores
+  # only: `kube_api`.
+  kube-api:
+    # IP range for any services created on Kubernetes
+    # This must match the service_cluster_ip_range in kube-controller
+    service_cluster_ip_range: 10.96.0.0/16
+    # Expose a different port range for NodePort services
+    service_node_port_range: 30000-32767
+    pod_security_policy: false
+    # Add additional arguments to the kubernetes API server
+    # This WILL OVERRIDE any existing defaults
+    extra_args:
+      # Enable audit log to stdout
+      audit-log-path: "-"
+      # Increase number of delete workers
+      delete-collection-workers: 3
+      # Set the level of log output to debug-level
+      v: 4
+      #allocate-node-cidrs: true
+  # Note for Rancher 2 users: If you are configuring Cluster Options
+  # using a Config File when creating Rancher Launched Kubernetes,
+  # the names of services should contain underscores only:
+  # `kube_controller`. This only applies to Rancher v2.0.5 and v2.0.6.
+  kube-controller:
+    # CIDR pool used to assign IP addresses to pods in the cluster
+    cluster_cidr: 10.69.0.0/16
+    # IP range for any services created on Kubernetes
+    # This must match the service_cluster_ip_range in kube-api
+    service_cluster_ip_range: 10.96.0.0/16
+  kubelet:
+    # Base domain for the cluster
+    cluster_domain: cluster.local
+    # IP address for the DNS service endpoint
+    cluster_dns_server: 10.96.0.10
+    # Fail if swap is on
+    fail_swap_on: false
+    # Set max pods to 250 instead of default 110
+    extra_args:
+      max-pods: 250
+    # Optionally define additional volume binds to a service
+    extra_binds:
+      - "/usr/libexec/kubernetes/kubelet-plugins:/usr/libexec/kubernetes/kubelet-plugins"
+    extra_env:
+    #- "KUBELET_EXTRA_ARGS=--cgroup-driver=cgroupfs"
+
+# Kubernetes Authorization mode
+# Use `mode: rbac` to enable RBAC
+# Use `mode: none` to disable authorization
+authorization:
+  mode: rbac
+
+# Add-ons are deployed using kubernetes jobs. RKE will give
+# up on trying to get the job status after this timeout in seconds..
+addon_job_timeout: 60
+
+# Specify network plugin-in (canal, calico, flannel, weave, or none)
+network:
+  plugin: calico
+
+# Specify DNS provider (coredns or kube-dns)
+dns:
+  provider: coredns
+
+# Currently only nginx ingress provider is supported.
+# To disable ingress controller, set `provider: none`
+# `node_selector` controls ingress placement and is optional
+ingress:
+  provider: none
+
+addons_include:
+  - https://docs.projectcalico.org/manifests/calico.yaml

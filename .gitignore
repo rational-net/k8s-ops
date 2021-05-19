@@ -17,3 +17,4 @@ server/ansible/roles/geerlingguy.pip*
 ansible.log
 # SOPS
 .decrypted~*.yaml
+/rke/
