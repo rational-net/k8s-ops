@@ -10,6 +10,7 @@
       APT::Install-Suggests "false";
       APT::Get::Install-Recommends "false";
       APT::Get::Install-Suggests "false";
+
 - name: packages | upgrade all packages
   ansible.builtin.apt:
     upgrade: full
