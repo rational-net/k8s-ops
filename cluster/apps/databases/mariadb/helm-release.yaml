@@ -50,7 +50,7 @@ spec:
       image:
         registry: docker.io
         repository: bitnami/bitnami-shell
-        tag: "10"
+        tag: "11"
         pullPolicy: Always
     metrics:
       enabled: true
