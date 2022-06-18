@@ -21,7 +21,7 @@ spec:
     image:
       registry: docker.io
       repository: bitnami/mariadb
-      tag: 10.5.10-debian-10-r0
+      tag: 10.7.4-debian-10-r0
       pullPolicy: IfNotPresent
       debug: false
     clusterDomain: cluster.local
