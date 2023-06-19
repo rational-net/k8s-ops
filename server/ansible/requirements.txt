@@ -1,2 +1,2 @@
-jmespath==0.10.0
+jmespath==1.0.1
 ansible>=3.0.0
